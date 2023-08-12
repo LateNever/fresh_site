@@ -1,0 +1,25 @@
+.section {
+  display: flex;
+  /* flex-direction: column; */
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
+  /* padding: 5px 0; */
+  /* margin-bottom: 10px; */
+  /* background-color: #7d7db5; */
+  max-width: 100%;
+  /* border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 1000ms; */
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1280px;
+  height: 1080px;
+  background-color: green;
+}

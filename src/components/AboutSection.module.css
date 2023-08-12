@@ -1,0 +1,64 @@
+.aboutSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  justify-content: space-between;
+  /* padding: 50px 100px; */
+  position: relative;
+  transition: 0.5s;
+  font-family: serif;
+}
+
+.logo {
+  z-index: 1;
+  position: absolute;
+  width: 450px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* text-align: center; */
+  /* align-items: center;
+  justify-content: center; */
+  /* padding: 5px 0; */
+  /* margin-bottom: 10px; */
+  /* background-color: #a0a0a0; */
+  /* color: blueviolet; */
+  /* width: 500px; */
+  /* border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 1000ms; */
+}
+
+.cover {
+  /* box-sizing: border-box; */
+  /* max-width: 100%; */
+  /* height: 100%; */
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  object-fit: cover;
+}
+
+.bgOverlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  background: linear-gradient(10deg, #112242 50%, transparent);
+  opacity: 0.75;
+  z-index: -1;
+}
+
+.bgOverlay2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(75deg, #112242 10%, transparent);
+  opacity: 0.75;
+  z-index: -1;
+}
