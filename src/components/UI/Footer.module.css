@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+}
+
+.iconsContainer {
+  display: flex;
+  margin: 0 0 75px 100px;
+}
+
+a {
+  display: flex;
+  margin-right: 30px;
+}
+
+.socialsIco {
+  width: 35px;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: 200ms;
+}
+
+.socialsIco:hover {
+  opacity: 1;
+  transition: 200ms;
+}

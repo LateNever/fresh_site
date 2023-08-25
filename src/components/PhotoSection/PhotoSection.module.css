@@ -1,0 +1,52 @@
+:root {
+  --windowHeight: 100vh;
+  --circleRadius: calc(0.5 * var(--windowHeight));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.photoSection {
+  width: 100%;
+  height: var(--windowHeight);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  background-color: #f2f2f2;
+}
+
+.bgCircle {
+  width: var(--circleRadius);
+  height: var(--circleRadius);
+  position: absolute;
+  top: calc(var(--windowHeight) / 2 - var(--circleRadius) / 2);
+  left: calc(-1 * var(--circleRadius) / 2);
+  background-color: #23334d;
+  opacity: 0.12;
+  border-radius: 50%;
+}
+
+.gallery {
+  box-sizing: border-box;
+  padding: 6px;
+  /* display: flex;
+  flex-wrap: wrap; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.photo {
+  padding: 6px;
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.photo img {
+  /* width: 200px; */
+  padding: 6px;
+  /* height: 250px; */
+  /* object-fit: contain; */
+}
