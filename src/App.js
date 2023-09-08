@@ -10,10 +10,10 @@ import Footer from './components/UI/Footer'
 function App() {
   return (
     <div className="App">
-      <TestSection />
-      {/* <StartSection /> */}
-      {/* <PhotoSection /> */}
-      {/* <AboutSection /> */}
+      {/* <TestSection /> */}
+      <StartSection />
+      <PhotoSection />
+      <AboutSection />
     </div>
   )
 }

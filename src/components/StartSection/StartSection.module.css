@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: space-around;
   position: relative;
+  /* background: url(cover.jpg);
+  background-attachment: fixed; */
 }
 
 .cover {
