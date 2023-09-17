@@ -1,5 +1,6 @@
 .carouselContainer {
   width: 60%;
+  padding-top: 10%;
 }
 
 .header {
@@ -19,13 +20,15 @@
 
 .allPages {
   display: flex;
+  justify-content: space-between;
   /* flex-direction: row; */
 }
 
 .contentOne {
   display: flex;
   align-items: center;
-  max-width: 500px;
+  /* max-width: 500px; */
+  width: 48%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   color: #fff;
@@ -35,14 +38,15 @@
 .contentTwo {
   display: flex;
   /* align-items: center; */
+  width: 48%;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
   /* background-color: aquamarine; */
   color: #fff;
 }
 
 .logo {
-  width: 450px;
+  width: 100%;
 }
 
 .nav {

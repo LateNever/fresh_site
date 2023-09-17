@@ -22,7 +22,7 @@ function AboutCarousel() {
         </div>
       </div>
 
-      <div className={styles.nav}>
+      {/* <div className={styles.nav}>
         <img
           className={styles.navIco}
           src="../img/arrowLeft.svg"
@@ -37,7 +37,7 @@ function AboutCarousel() {
           src="../img/arrowRight.svg"
           alt="arrowRight"
         ></img>
-      </div>
+      </div> */}
     </div>
   )
 }

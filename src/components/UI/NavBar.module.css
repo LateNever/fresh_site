@@ -3,10 +3,14 @@
   justify-content: flex-end;
   width: 100%;
   /* background-color: blueviolet; */
+  position: fixed;
+  z-index: 999;
+  top: 5%;
+  right: 5%;
 }
 
 .menuIco {
-  margin: 75px 100px 0 0;
+  /* margin: 75px 100px 0 0; */
   width: 60px;
   cursor: pointer;
   opacity: 0.65;

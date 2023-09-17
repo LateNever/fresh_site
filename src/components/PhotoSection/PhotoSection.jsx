@@ -6,8 +6,8 @@ function PhotoSection() {
   const [modal, setModal] = useState(false)
   const [selectedPhoto, setSelectedPhoto] = useState('')
 
-  const getPhoto = (photoSrc) => {
-    setSelectedPhoto(photoSrc)
+  const getPhoto = (photo) => {
+    setSelectedPhoto(photo)
     setModal(true)
   }
 
@@ -15,8 +15,18 @@ function PhotoSection() {
     setModal(false)
   }
 
-  let photoRef = useRef()
-  let selectedPhotoRef = useRef()
+  // let photoRef = useRef()
+
+  const slidePhoto = (direction, loopDirection) => {
+    console.log(selectedPhoto.id + direction)
+    if (!!photos[selectedPhoto.id + direction]) {
+      console.log('NEXT')
+      setSelectedPhoto(photos[selectedPhoto.id + direction])
+    } else {
+      setSelectedPhoto(photos[loopDirection])
+      console.log('SKOK')
+    }
+  }
 
   // useEffect(() => {
   //   let handler = (e) => {
@@ -36,6 +46,7 @@ function PhotoSection() {
     <div className={styles.photoSection}>
       <div className={`${styles.bgCircle} ${styles.bgCircle__1}`}></div>
       <div className={`${styles.bgCircle} ${styles.bgCircle__2}`}></div>
+      <div className={`${styles.bgCircle} ${styles.bgCircle__3}`}></div>
 
       <h1>О группе в картинках</h1>
       <div className={styles.gallery}>
@@ -44,9 +55,8 @@ function PhotoSection() {
             <div
               key={photo.id}
               onClick={() => {
-                getPhoto(photo.imgSrc)
-                selectedPhotoRef.current = photo
-                // console.log(selectedPhotoRef.current)
+                getPhoto(photo)
+                // selectedPhotoRef.current = photo
               }}
             >
               <img
@@ -70,13 +80,7 @@ function PhotoSection() {
         <div
           className={`${styles.arrowContainer} ${styles.arrowContainerL}`}
           onClick={() => {
-            if (!!photos[selectedPhotoRef.current.id - 1]) {
-              setSelectedPhoto(photos[selectedPhotoRef.current.id - 1].imgSrc)
-              selectedPhotoRef.current = photos[selectedPhotoRef.current.id - 1]
-            } else {
-              setSelectedPhoto(photos[photos.length - 1].imgSrc)
-              selectedPhotoRef.current = photos[photos.length - 1]
-            }
+            slidePhoto(-1, photos.length - 1)
           }}
         >
           <img
@@ -87,22 +91,15 @@ function PhotoSection() {
         </div>
 
         <img
-          ref={photoRef}
+          // ref={photoRef}
           className={styles.modalPhoto}
-          src={selectedPhoto}
+          src={selectedPhoto.imgSrc}
           alt="fresh_photo"
         />
         <div
           className={`${styles.arrowContainer} ${styles.arrowContainerR}`}
           onClick={() => {
-            // console.log(!!photos[selectedPhotoRef.current.id + 1].imgSrc)
-            if (!!photos[selectedPhotoRef.current.id + 1]) {
-              setSelectedPhoto(photos[selectedPhotoRef.current.id + 1].imgSrc)
-              selectedPhotoRef.current = photos[selectedPhotoRef.current.id + 1]
-            } else {
-              setSelectedPhoto(photos[0].imgSrc)
-              selectedPhotoRef.current = photos[0]
-            }
+            slidePhoto(1, 0)
           }}
         >
           <img

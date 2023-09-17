@@ -1,0 +1,89 @@
+:root {
+  --windowHeight: 100vh;
+  --circleRadius: calc(0.5 * var(--windowHeight));
+}
+
+.videoSection {
+  width: 100%;
+  /* min-height: 100vh; */
+  padding: 100px 100px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+.bgCircle {
+  position: absolute;
+  background-color: #23334d;
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: 0;
+  /* transition: 1; */
+}
+
+.bgCircle__1 {
+  width: var(--circleRadius);
+  height: var(--circleRadius);
+  top: calc(var(--windowHeight) / 2 - var(--circleRadius) / 2);
+  left: calc(-1 * var(--circleRadius) / 2);
+}
+
+.bgCircle__2 {
+  width: calc(var(--circleRadius) * 2);
+  height: calc(var(--circleRadius) * 2);
+  position: absolute;
+  top: calc(-1 * var(--windowHeight) / 3);
+  left: calc(var(--circleRadius) * 1.5);
+  background-color: #23334d;
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.bgCircle__3 {
+  width: calc(var(--circleRadius) * 1.7);
+  height: calc(var(--circleRadius) * 1.7);
+  position: absolute;
+  bottom: calc(var(--windowHeight) / 3);
+  left: calc(var(--circleRadius) * 1);
+  background-color: #23334d;
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.videoSection h1 {
+  font-family: serif;
+  margin-bottom: 25px;
+  font-size: 50px;
+  color: #112242;
+}
+
+.videoDiv {
+  width: 100%;
+  min-width: 500px;
+  padding-top: 56.25%;
+  position: relative;
+  cursor: pointer;
+  background-image: url(./cover.jpg);
+  background-size: cover;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.socialsIco {
+  width: 70px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 200ms;
+  position: absolute;
+  top: calc(50% - 24.5px);
+  left: calc(50% - 35px);
+}

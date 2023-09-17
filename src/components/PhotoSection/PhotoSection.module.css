@@ -41,6 +41,18 @@
   z-index: 0;
 }
 
+.bgCircle__3 {
+  width: calc(var(--circleRadius) * 1.7);
+  height: calc(var(--circleRadius) * 1.7);
+  position: absolute;
+  bottom: calc(var(--windowHeight) / 3);
+  left: calc(var(--circleRadius) * 1);
+  background-color: #23334d;
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: 0;
+}
+
 .photoSection h1 {
   font-family: serif;
   margin-bottom: 25px;

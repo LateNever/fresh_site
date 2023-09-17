@@ -9,9 +9,9 @@ function AboutSection() {
       <img className={styles.cover} src="../img/about-bg.jpg" alt="COVER"></img>
       <div className={styles.bgOverlay}></div>
       <div className={styles.bgOverlay2}></div>
-      <NavBar />
+      {/* <NavBar /> */}
       <AboutCarousel />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
