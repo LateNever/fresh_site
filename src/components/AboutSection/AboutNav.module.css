@@ -1,0 +1,69 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  /* height: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(48, 111, 184); */
+  /* width: 48%; */
+}
+
+.navIcoContainer {
+  width: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navIco {
+  width: 16px;
+  opacity: 0.35;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.navIco:hover {
+  width: 17px;
+  opacity: 1;
+  transition: 200ms;
+}
+
+.dots {
+  display: flex;
+  /* justify-content: space-between; */
+  /* width: 90px; */
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.dotContainer {
+  /* background-color: aqua; */
+  /* border: 1px solid black; */
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navDot {
+  width: 11px;
+  opacity: 0.35;
+  transition: 200ms;
+}
+
+.navDot:hover {
+  opacity: 1;
+  transition: 200ms;
+  width: 12px;
+}
+
+.dotActive {
+  width: 14px;
+  opacity: 1;
+  transition: 200ms;
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import styles from './VideoSection.module.css'
+import BgVideo from '../../img/ZimaFRESH.mp4'
 
 function VideoSection() {
   const [showMode, setShowMode] = useState(false)
@@ -40,6 +41,7 @@ function VideoSection() {
       <div className={`${styles.bgCircle} ${styles.bgCircle__1}`}></div>
       <div className={`${styles.bgCircle} ${styles.bgCircle__2}`}></div>
       <div className={`${styles.bgCircle} ${styles.bgCircle__3}`}></div>
+      <video src={BgVideo} autoPlay muted loop className={styles.bgVideo} />
 
       <h1>Видео</h1>
       <div className={styles.videoDiv} onClick={handlerClick}>

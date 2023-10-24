@@ -1,16 +1,26 @@
+import { motion } from 'framer-motion'
+import variants from './Animate/variants'
 import styles from './Footer.module.css'
 import ButtonIcon from './ButtonIcon'
+import { ReactComponent as Whatsup } from '../../img/whatsup.svg'
 
 function Footer() {
   return (
-    <div className={styles.footer}>
+    <motion.div
+      className={styles.footer}
+      initial={'hidden'}
+      animate={'visible'}
+      transition={{ duration: 1, delay: 0.5 }}
+      variants={variants}
+    >
       <div className={styles.iconsContainer}>
         <a href="#" target="_blank">
-          <img
+          <Whatsup className={styles.socialsIco} />
+          {/* <img
             className={styles.socialsIco}
             src="../img/whatsup.svg"
             alt="whatsup"
-          ></img>
+          ></img> */}
         </a>
 
         <a href="#" target="_blank">
@@ -21,17 +31,8 @@ function Footer() {
           ></img>
         </a>
 
-        <a
-          // className={styles.socialsIco}
-          href="https://vk.com/fresh_music_band"
-          target="_blank"
-        >
-          <img
-            className={styles.socialsIco}
-            src="../img/vk.svg"
-            alt="vk"
-            // href="https://vk.com/fresh_music_band"
-          ></img>
+        <a href="https://vk.com/fresh_music_band" target="_blank">
+          <img className={styles.socialsIco} src="../img/vk.svg" alt="vk"></img>
         </a>
 
         <a href="https://www.youtube.com/@fresh_music_band" target="_blank">
@@ -41,10 +42,8 @@ function Footer() {
             alt="youtube"
           ></img>
         </a>
-
-        {/* <ButtonIcon icon="../img/whatsup.svg" /> */}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

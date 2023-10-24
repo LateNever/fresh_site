@@ -1,43 +1,95 @@
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import styles from './AboutCarousel.module.css'
+import { ReactComponent as Logo } from '../../img/LOGO.svg'
+import { ReactComponent as ArrowLeft } from '../../img/arrowLeft.svg'
+import AboutNav from './AboutNav'
+import aboutContent from './aboutContent'
 
 function AboutCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(aboutContent[0])
+
+  const animateOffset = 10
+  const animateDuration = 0.2
+
+  const slide = (page) => {
+    setCurrentSlide(aboutContent[page])
+  }
+
+  const contentAnimation = {
+    hidden: {
+      x: -75,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delay: custom * 0.2 },
+    }),
+  }
+
   return (
     <div className={styles.carouselContainer}>
-      <div className={styles.header}>
-        <h1>О группе</h1>
+      <div className={styles.content}>
+        <motion.div
+          className={styles.contentLeft}
+          custom={2}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.5, once: true }}
+          variants={contentAnimation}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide.id}
+              className={styles.contLeftContainer}
+              initial={{ opacity: 0, x: -animateOffset }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -animateOffset }}
+              transition={{ duration: animateDuration }}
+            >
+              <div className={styles.title}>
+                <h1>{currentSlide.title}</h1>
+              </div>
+              <div className={styles.text}>
+                <p>{currentSlide.text}</p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+          {/* Есть проблема: при частом нажатии на стрелку, компонент ломается, 
+          связана с работой AnimatePresence (если его убрать то все ок) */}
+          <AboutNav
+            slide={slide}
+            aboutContent={aboutContent}
+            currentSlide={currentSlide}
+          />
+        </motion.div>
+        <motion.div
+          custom={1}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.2, once: true }}
+          variants={contentAnimation}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide.id}
+              className={styles.contentRight}
+              initial={{ opacity: 0, x: animateOffset }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: animateOffset }}
+              transition={{ duration: animateDuration }}
+            >
+              <div className={styles.bgOverlay}></div>
+              <img
+                src={currentSlide.img}
+                alt="img"
+                className={styles.contentImg}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </div>
-
-      <div className={styles.window}>
-        <div className={styles.allPages}>
-          <div className={styles.contentOne}>
-            <p>
-              КАВЕР-ГРУППА FRESH - это фирменный звук, свежий вкус новой музыки,
-              танцевальный драйв и нескончаемые эмоции! <br />
-              Мы превратим ваше мероприятие в настоящий праздник!
-            </p>
-          </div>
-          <div className={styles.contentTwo}>
-            <img className={styles.logo} src="../img/LOGO.svg" alt="LOGO"></img>
-          </div>
-        </div>
-      </div>
-
-      {/* <div className={styles.nav}>
-        <img
-          className={styles.navIco}
-          src="../img/arrowLeft.svg"
-          alt="arrowLeft"
-        ></img>
-        <div className={styles.dots}>
-          <img className={styles.navDot} src="../img/dot.svg" alt="dot"></img>
-          <img className={styles.navDot} src="../img/dot.svg" alt="dot"></img>
-        </div>
-        <img
-          className={styles.navIco}
-          src="../img/arrowRight.svg"
-          alt="arrowRight"
-        ></img>
-      </div> */}
     </div>
   )
 }
