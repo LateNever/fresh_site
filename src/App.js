@@ -37,7 +37,7 @@ function App() {
       {/* <PhotoSection /> */}
       <AboutSection />
       {/* <AboutNav /> */}
-      {/* <VideoSection2 /> */}
+      <VideoSection2 />
       {/* <VideoSection /> */}
       {/* <Modal /> */}
     </div>

@@ -17,6 +17,18 @@ function VideoSection2() {
     setBgVideoShow(!bgVideoShow)
   }
 
+  const contentAnimation = {
+    hidden: {
+      // y: -20,
+      opacity: 0,
+    },
+    visible: (custom) => ({
+      // y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, delay: custom * 0.2 },
+    }),
+  }
+
   return (
     <div className={styles.videoSection}>
       <img className={styles.cover} src="../img/cover.jpg" alt="COVER"></img>
@@ -31,18 +43,23 @@ function VideoSection2() {
             initial={'hidden'}
             animate={'visible'}
             exit={'hidden'}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
             variants={variants}
           />
         )}
       </AnimatePresence>
       <div className={styles.bgOverlay}></div>
-      <img
+      <motion.img
         className={styles.socialsIco}
         src="../img/youtube.svg"
         alt="youtube"
         onClick={openVideo}
-      ></img>
+        custom={2}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.5, once: true }}
+        variants={contentAnimation}
+      ></motion.img>
       <AnimatePresence>
         {!bgVideoShow && (
           <motion.div
