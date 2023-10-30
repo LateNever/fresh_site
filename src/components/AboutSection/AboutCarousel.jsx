@@ -1,10 +1,16 @@
+import { motion } from 'framer-motion'
 import styles from './AboutCarousel.module.css'
 
 function AboutCarousel() {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.header}>
-        <h1>О группе</h1>
+        <motion.h1
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity }}
+        >
+          О группе
+        </motion.h1>
       </div>
 
       <div className={styles.window}>

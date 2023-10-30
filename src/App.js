@@ -17,8 +17,8 @@ function App() {
       {/* <Footer /> */}
       {/* <StartSection /> */}
       {/* <VideoSection /> */}
-      {/* <AboutSection /> */}
-      <PhotoSection />
+      <AboutSection />
+      {/* <PhotoSection /> */}
     </div>
   )
 }
