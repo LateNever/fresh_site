@@ -5,7 +5,6 @@
 
 .photoSection {
   width: 100%;
-  /* min-height: 100vh; */
   padding: 100px 100px;
   box-sizing: border-box;
   position: relative;
@@ -19,7 +18,6 @@
   opacity: 0.15;
   border-radius: 50%;
   z-index: 0;
-  /* transition: 1; */
 }
 
 .bgCircle__1 {
@@ -60,13 +58,6 @@
   color: #112242;
 }
 
-/* .photoImg {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-  display: inline-block;
-} */
-
 .gallery div {
   display: block;
   justify-content: center;
@@ -87,97 +78,4 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 200px;
   grid-auto-flow: dense;
-}
-
-.modal {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 3%;
-  /* margin: 10%; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  z-index: 999;
-  /* overflow-y: auto; */
-  visibility: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-  transition: 200ms;
-}
-
-/* .modal:hover {
-  background-color: #23334d;
-} */
-
-.modalOpen {
-  /* width: 50%; */
-  /* background-color: #fff; */
-  visibility: visible;
-}
-
-.modalPhoto {
-  max-width: 100%;
-  box-sizing: border-box;
-  max-height: 100%;
-}
-
-.closeIcon {
-  position: fixed;
-  top: 50px;
-  right: 8%;
-  width: 45px;
-  cursor: pointer;
-  opacity: 0.65;
-  transition: 200ms;
-  z-index: 999;
-}
-
-.closeIcon:hover {
-  opacity: 1;
-}
-
-.arrowContainer {
-  width: 20%;
-  height: 100%;
-  /* background-color: #23334d; */
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  /* background-color: red; */
-}
-
-.arrowContainer:hover {
-  /* opacity: 0.1; */
-}
-
-.arrowContainerL {
-  top: 0;
-  left: 0;
-  /* background-color: #112242; */
-}
-
-.arrowContainerR {
-  top: 0;
-  right: 0;
-  /* background-color: #112242; */
-}
-
-.navIco {
-  width: 35px;
-  opacity: 0.55;
-  cursor: pointer;
-  transition: 200ms;
-  /* margin: 50px; */
-  z-index: 999;
-}
-
-.navIco:hover {
-  opacity: 1;
-  transition: 200ms;
-  /* z-index: 999; */
 }

@@ -1,31 +1,46 @@
 import { useState, useEffect, useRef } from 'react'
-import photos from '../../data/photos'
+import { useMountModal } from './Modal/useMountModal'
+import classNames from 'classnames'
 import styles from './PhotoSection.module.css'
+import photos from '../../data/photos'
+import Modal from './Modal/Modal'
 
 function PhotoSection() {
   const [modal, setModal] = useState(false)
   const [selectedPhoto, setSelectedPhoto] = useState('')
+  const [fadeState, setFadeState] = useState('fadeIn')
+  const [fadeModalState, setModalFadeState] = useState('modal')
+  const [currentTimer, setCurrentTimer] = useState()
+  const { mounted } = useMountModal({ modal })
 
   const getPhoto = (photo) => {
     setSelectedPhoto(photo)
     setModal(true)
+    setModalFadeState('modalIn')
+    setTimeout(() => {
+      setModalFadeState('modalOn')
+    }, 1)
   }
 
   const closeModal = () => {
     setModal(false)
+    setModalFadeState('modalIn')
   }
 
-  // let photoRef = useRef()
-
   const slidePhoto = (direction, loopDirection) => {
-    console.log(selectedPhoto.id + direction)
-    if (!!photos[selectedPhoto.id + direction]) {
-      console.log('NEXT')
-      setSelectedPhoto(photos[selectedPhoto.id + direction])
-    } else {
-      setSelectedPhoto(photos[loopDirection])
-      console.log('SKOK')
-    }
+    const timer = setTimeout(() => {
+      if (!!photos[selectedPhoto.id + direction]) {
+        console.log('NEXT')
+        setSelectedPhoto(photos[selectedPhoto.id + direction])
+      } else {
+        setSelectedPhoto(photos[loopDirection])
+        console.log('SKOK')
+      }
+      setFadeState('fadeIn')
+    }, 100)
+    clearTimeout(currentTimer)
+    setFadeState('fadeOut')
+    setCurrentTimer(timer)
   }
 
   // useEffect(() => {
@@ -56,11 +71,10 @@ function PhotoSection() {
               key={photo.id}
               onClick={() => {
                 getPhoto(photo)
-                // selectedPhotoRef.current = photo
               }}
             >
               <img
-                src={photo.imgSrc}
+                src={photo.imgSrc000}
                 alt="fresh_photo"
                 className={styles.photoImg}
               />
@@ -69,46 +83,16 @@ function PhotoSection() {
         })}
       </div>
 
-      <div
-        className={modal ? `${styles.modal} ${styles.modalOpen}` : styles.modal}
-      >
-        <img
-          className={styles.closeIcon}
-          src="../img/close_btn.svg"
-          onClick={() => closeModal()}
+      {mounted && (
+        <Modal
+          closeModal={closeModal}
+          slidePhoto={slidePhoto}
+          fadeModalState={fadeModalState}
+          fadeState={fadeState}
+          photos={photos}
+          selectedPhoto={selectedPhoto}
         />
-        <div
-          className={`${styles.arrowContainer} ${styles.arrowContainerL}`}
-          onClick={() => {
-            slidePhoto(-1, photos.length - 1)
-          }}
-        >
-          <img
-            className={styles.navIco}
-            src="../img/arrowLeft.svg"
-            alt="arrowLeft"
-          ></img>
-        </div>
-
-        <img
-          // ref={photoRef}
-          className={styles.modalPhoto}
-          src={selectedPhoto.imgSrc}
-          alt="fresh_photo"
-        />
-        <div
-          className={`${styles.arrowContainer} ${styles.arrowContainerR}`}
-          onClick={() => {
-            slidePhoto(1, 0)
-          }}
-        >
-          <img
-            className={styles.navIco}
-            src="../img/arrowRight.svg"
-            alt="arrowRight"
-          ></img>
-        </div>
-      </div>
+      )}
     </div>
   )
 }

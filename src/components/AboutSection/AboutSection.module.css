@@ -1,64 +1,46 @@
+:root {
+  --windowHeight: 100vh;
+  --circleRadius: calc(0.5 * var(--windowHeight));
+}
+
 .aboutSection {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-around; */
   justify-content: center;
-  /* padding: 50px 100px; */
   position: relative;
-  transition: 0.5s;
-  font-family: serif;
+  background-color: #f2f2f2;
+  /* z-index: -10; */
+  /* background-color: #141414; */
+  overflow: hidden;
 }
 
-.logo {
-  z-index: 1;
+.bgCircle {
   position: absolute;
-  width: 450px;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* text-align: center; */
-  /* align-items: center;
-  justify-content: center; */
-  /* padding: 5px 0; */
-  /* margin-bottom: 10px; */
-  /* background-color: #a0a0a0; */
-  /* color: blueviolet; */
-  /* width: 500px; */
-  /* border-radius: 15px;
-  border: none;
-  cursor: pointer;
-  transition: 1000ms; */
+  background-color: #23334d;
+  opacity: 0.15;
+  border-radius: 50%;
 }
 
-.cover {
-  /* box-sizing: border-box; */
-  /* max-width: 100%; */
-  /* height: 100%; */
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  z-index: -2;
-  object-fit: cover;
+.bgCircle__1 {
+  width: var(--circleRadius);
+  height: var(--circleRadius);
+  top: calc(var(--windowHeight) / 2 - var(--circleRadius) / 2);
+  left: calc(-1 * var(--circleRadius) / 2);
 }
 
-.bgOverlay {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-
-  background: linear-gradient(10deg, #112242 50%, transparent);
-  opacity: 0.75;
-  z-index: -1;
+.bgCircle__2 {
+  width: calc(var(--circleRadius) * 2);
+  height: calc(var(--circleRadius) * 2);
+  top: calc(-1 * var(--windowHeight) / 3);
+  left: calc(var(--circleRadius) * 1.5);
 }
 
-.bgOverlay2 {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background: linear-gradient(75deg, #112242 10%, transparent);
-  opacity: 0.75;
-  z-index: -1;
+.bgCircle__3 {
+  width: calc(var(--circleRadius) * 1.7);
+  height: calc(var(--circleRadius) * 1.7);
+  bottom: calc(-1 * var(--windowHeight) / 1.5);
+  left: calc(var(--circleRadius) * 1);
 }

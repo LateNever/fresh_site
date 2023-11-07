@@ -1,0 +1,92 @@
+:root {
+  --windowHeight: 100vh;
+  --circleRadius: calc(0.5 * var(--windowHeight));
+}
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 200ms;
+}
+
+.modalIn {
+  opacity: 0;
+}
+
+.modalOn {
+  opacity: 1;
+}
+
+.modalPhoto {
+  max-width: 100%;
+  box-sizing: border-box;
+  max-height: 100%;
+}
+
+.fadeIn {
+  transition-duration: 400ms;
+  opacity: 1;
+}
+
+.fadeOut {
+  transition-duration: 400ms;
+  opacity: 0;
+}
+
+.closeIcon {
+  position: fixed;
+  top: 50px;
+  right: 8%;
+  width: 45px;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: 200ms;
+  z-index: 999;
+}
+
+.closeIcon:hover {
+  opacity: 1;
+}
+
+.arrowContainer {
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrowContainerL {
+  top: 0;
+  left: 0;
+}
+
+.arrowContainerR {
+  top: 0;
+  right: 0;
+}
+
+.navIco {
+  width: 35px;
+  opacity: 0.55;
+  cursor: pointer;
+  transition: 200ms;
+  z-index: 999;
+}
+
+.navIco:hover {
+  opacity: 1;
+  transition: 200ms;
+}

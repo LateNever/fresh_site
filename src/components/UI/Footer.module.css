@@ -1,18 +1,16 @@
 .footer {
-  position: fixed;
+  position: absolute;
   top: 5%;
   left: 5%;
-  width: 100%;
-  /* background-color: blue; */
+  /* width: 100%; */
   z-index: 9999;
 }
 
 .iconsContainer {
   display: flex;
-  /* margin: 0 0 75px 100px; */
 }
 
-a {
+.iconsContainer a {
   display: flex;
   margin-right: 30px;
 }
