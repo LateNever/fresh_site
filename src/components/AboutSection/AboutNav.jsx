@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
 import styles from './AboutNav.module.css'
 import classNames from 'classnames'
+import arrowLeft from '../../img/UI/arrowLeft.svg'
+import arrowRight from '../../img/UI/arrowRight.svg'
+import dot from '../../img/UI/dot.svg'
 
 function AboutNav({ slide, aboutContent, currentSlide }) {
   return (
@@ -16,7 +19,7 @@ function AboutNav({ slide, aboutContent, currentSlide }) {
               }
             }}
             className={styles.navIco}
-            src="../img/arrowLeft.svg"
+            src={arrowLeft}
             alt="arrowLeft"
           ></img>
         </div>
@@ -31,7 +34,7 @@ function AboutNav({ slide, aboutContent, currentSlide }) {
                   className={classNames(styles.navDot, {
                     [styles.dotActive]: currentSlide.id == page.id,
                   })}
-                  src="../img/dot.svg"
+                  src={dot}
                   alt="dot"
                 ></img>
               </div>
@@ -48,7 +51,7 @@ function AboutNav({ slide, aboutContent, currentSlide }) {
               }
             }}
             className={styles.navIco}
-            src="../img/arrowRight.svg"
+            src={arrowRight}
             alt="arrowRight"
           ></img>
         </div>

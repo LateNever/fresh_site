@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './AboutCarousel.module.css'
-import { ReactComponent as Logo } from '../../img/LOGO.svg'
-import { ReactComponent as ArrowLeft } from '../../img/arrowLeft.svg'
+import { ReactComponent as Logo } from '../../img/logo/LOGO.svg'
+import { ReactComponent as ArrowLeft } from '../../img/UI/arrowLeft.svg'
 import AboutNav from './AboutNav'
 import aboutContent from './aboutContent'
 

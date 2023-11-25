@@ -31,8 +31,8 @@
   width: calc(var(--circleRadius) * 2);
   height: calc(var(--circleRadius) * 2);
   position: absolute;
-  top: calc(-1 * var(--windowHeight) / 3);
-  left: calc(var(--circleRadius) * 1.5);
+  top: calc(var(--windowHeight) / 1.5);
+  right: calc(-1 * var(--circleRadius) * 1);
   background-color: #23334d;
   opacity: 0.15;
   border-radius: 50%;

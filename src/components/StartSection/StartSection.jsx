@@ -3,6 +3,8 @@ import NavBar from '../UI/NavBar'
 import Footer from '../UI/Footer'
 import classNames from 'classnames'
 import styles from './StartSection.module.css'
+import bgCover from '../../img/backgrounds/bg_1.jpg'
+import { ReactComponent as Logo } from '../../img/logo/LOGO.svg'
 
 function StartSection() {
   const renderDelay = 600
@@ -19,16 +21,12 @@ function StartSection() {
 
   return (
     <div className={styles.startSection}>
-      <img className={styles.cover} src="../img/cover.jpg" alt="COVER"></img>
+      <img className={styles.cover} src={bgCover} alt="COVER"></img>
       <div className={styles.bgOverlay}></div>
 
-      <img
-        className={classNames(styles.logo, styles[logoFadeState])}
-        src="../img/LOGO.svg"
-        alt="LOGO"
-      ></img>
+      <Logo className={classNames(styles.logo, styles[logoFadeState])} />
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

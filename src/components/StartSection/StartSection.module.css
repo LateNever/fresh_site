@@ -33,6 +33,7 @@
   position: absolute;
   margin: 0 10%;
   transition: 2500ms;
+  fill: #dde7cf;
 }
 
 .bgOverlay {

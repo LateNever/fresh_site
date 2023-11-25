@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import styles from './VideoSection.module.css'
-import BgVideo from '../../img/ZimaFRESH.mp4'
+import BgVideo from '../../img/backgrounds/ZimaFRESH.mp4'
+import { ReactComponent as Youtube } from '../../img/socials/youtube.svg'
 
 function VideoSection() {
   const [showMode, setShowMode] = useState(false)
@@ -12,11 +13,7 @@ function VideoSection() {
   let content = null
   let startContent = (
     <>
-      <img
-        className={styles.socialsIco}
-        src="../img/youtube.svg"
-        alt="youtube"
-      ></img>
+      <Youtube className={styles.socialsIco} />
     </>
   )
 

@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import variants from '../UI/Animate/variants'
 import classNames from 'classnames'
 import styles from './VideoSection2.module.css'
-import BgVideo from '../../img/ZimaFRESH.mp4'
+import BgVideo from '../../img/backgrounds/ZimaFRESH.mp4'
+import youtube from '../../img/socials/youtube.svg'
 
 function VideoSection2() {
   const [modal, setModal] = useState(false)
@@ -31,7 +32,11 @@ function VideoSection2() {
 
   return (
     <div className={styles.videoSection}>
-      <img className={styles.cover} src="../img/cover.jpg" alt="COVER"></img>
+      <img
+        className={styles.cover}
+        src="../../img/backgrounds/bg_1.jpg"
+        alt="COVER"
+      ></img>
       <AnimatePresence>
         {bgVideoShow && (
           <motion.video
@@ -51,7 +56,7 @@ function VideoSection2() {
       <div className={styles.bgOverlay}></div>
       <motion.img
         className={styles.socialsIco}
-        src="../img/youtube.svg"
+        src={youtube}
         alt="youtube"
         onClick={openVideo}
         custom={2}

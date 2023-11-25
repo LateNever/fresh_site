@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import variants from './Animate/variants'
 import styles from './NavBar.module.css'
+import { ReactComponent as Menu } from '../../img/UI/menu.svg'
 
 function NavBar() {
   return (
@@ -8,10 +9,10 @@ function NavBar() {
       className={styles.navBar}
       initial={'hidden'}
       animate={'visible'}
-      transition={{ duration: 1, delay: 2 }}
+      transition={{ duration: 1, delay: 1 }}
       variants={variants}
     >
-      <img className={styles.menuIco} src="../img/menu.svg" alt="menu"></img>
+      <Menu className={styles.menuIco} />
     </motion.div>
   )
 }

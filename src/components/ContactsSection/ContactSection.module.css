@@ -30,6 +30,7 @@
   /* position: absolute; */
   margin: 0 5px;
   transition: 2500ms;
+  fill: #dde7cf;
 }
 
 .content {

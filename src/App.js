@@ -6,7 +6,7 @@ import Section from './components/Section'
 import StartSection from './components/StartSection/StartSection'
 import AboutSection from './components/AboutSection/AboutSection'
 import PhotoSection from './components/PhotoSection/PhotoSection'
-import VideoSection from './components/VideoSection/VideoSection'
+// import VideoSection from './components/VideoSection/VideoSection'
 import VideoSection2 from './components/VideoSection2/VideoSection2'
 import TestSection from './components/TestSection/TestSection'
 import ContactsSection from './components/ContactsSection/ContactsSection'
@@ -55,7 +55,7 @@ function App() {
     <div className="App">
       {/* <TestSection /> */}
       {navBarRender && <NavBar />}
-      {/* {navBarRender && <Footer />} */}
+      {navBarRender && <Footer />}
       <StartSection />
       <AboutSection />
       {/* <AboutNav /> */}
